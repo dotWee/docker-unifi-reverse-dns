@@ -2,7 +2,10 @@ name: build & publish docker image
 
 on:
   push:
-    branches: [ master ]
+  schedule:
+    # every sunday at midnight
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
 
 env:
   IMAGE_NAME: dotwee/unifi-reverse-dns
