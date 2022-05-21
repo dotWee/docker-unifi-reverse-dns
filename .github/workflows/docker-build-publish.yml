@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 env:
-  IMAGE_NAME: ${{ github.repository_owner }}/unifi-reverse-dns
+  IMAGE_NAME: dotwee/unifi-reverse-dns
 
 jobs:
   build:
@@ -40,7 +40,7 @@ jobs:
       - name: Log into Docker Hub
         uses: docker/login-action@v1.14.1
         with:
-          username: ${{ github.repository_owner }}
+          username: dotwee
           password: ${{ secrets.DOCKER_REGISTRY_TOKEN }}
 
       - name: Log into GitHub registry
